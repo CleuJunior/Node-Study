@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 
 init();
+writeReadJson();
 
 async function init() {
 
@@ -10,6 +11,24 @@ async function init() {
         const data = fs.readFile("./modulos-file_system/text.txt", "utf-8");
         
         console.log(data);
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+async function writeReadJson() {
+
+    try{
+        const arrayCarros = ["Gol", "Palio", "Uno"];
+        const carros = {
+            carros: arrayCarros
+        };
+
+
+        await fs.writeFile("./modulos-file_system/test.json", JSON.stringify(carros));
+        const data = await fs.readFile("./modulos-file_system/test.json");
+
+        console.log(JSON.parse(data));
     } catch(err) {
         console.log(err);
     }
