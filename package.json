@@ -1,12 +1,15 @@
 {
-  "name": "hello-node",
+  "name": "node-study",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./events-js/events.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "0y": "^1.0.0"
+  }
 }
