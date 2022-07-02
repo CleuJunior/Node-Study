@@ -1,12 +1,14 @@
-console.log(process.argv);
+import http from 'http';
 
-const NUMERORS = parseInt(process.argv[2]);
-const MULTIPLOS = [];
 
-for (let i = 3; i < NUMERORS; i++) {
+http.createServer((req, res) => {
 
-    if((i % 3 === 0) || (i % 5 === 0))
-        MULTIPLOS.push(i);
-}
+    if(req.method === 'GET' && req.url === "/test")
+        res.write("GET /teste executado com sucesso");
 
-console.log(MULTIPLOS);
+    
+    res.write("Hello World");
+    res.statusCode = 200;
+    res.end();
+
+}).listen(8080);
